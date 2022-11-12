@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import blogs from "../models/blogs";
-import user from "../models/user";
-import comments from "../models/comments";
+import blogs from "../models/blogs.js";
+import user from "../models/user.js";
+import comments from "../models/comments.js";
 
 export const postComment = async (req,res,next) =>{
     const {description,ourUser,ourBlog} = req.body;

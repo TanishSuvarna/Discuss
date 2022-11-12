@@ -1,5 +1,5 @@
 import Express from "express";
-import { postComment , editComment , deleteComment } from "../controller/comments-controller";
+import { postComment , editComment , deleteComment } from "../controller/comments-controller.js";
 const commentsRouter = Express.Router();
 
 commentsRouter.post("/" , postComment);

@@ -1,4 +1,4 @@
-import user from "../models/user";
+import user from "../models/user.js";
 import emailValidator from "deep-email-validator";
 import axios from 'axios';
 import { request, GraphQLClient, gql } from "graphql-request";

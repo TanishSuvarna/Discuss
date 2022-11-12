@@ -1,10 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
-import blogRouter from "./routes/blog-routes";
-import router from "./routes/user-routes";
-import commentsRouter from "./routes/comments-routes";
-import reminderRouter from "./routes/reminder-routes";
+import blogRouter from "./routes/blog-routes.js";
+import router from "./routes/user-routes.js";
+import commentsRouter from "./routes/comments-routes.js";
+import reminderRouter from "./routes/reminder-routes.js";
 import cors from "cors";
+import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config()
 mongoose.connect("mongodb://127.0.0.1:27017/discuss", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -18,7 +20,7 @@ db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function () {
   console.log("Connection Successfull");
 });
-app.listen(5000);
+app.listen(process.env.PORT || 5000);
 
 app.use("/api/user", router);
 app.use("/api/blog", blogRouter);

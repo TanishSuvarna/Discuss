@@ -5,9 +5,9 @@ import {
   getById,
   updateReminder,
   getAllReminderByUserId,
-} from "../controller/reminder-controller";
-import { addReminder } from "../controller/reminder-controller";
-import reminder from "../models/reminder";
+} from "../controller/reminder-controller.js";
+import { addReminder } from "../controller/reminder-controller.js";
+import reminder from "../models/reminder.js";
 const reminderRouter = Express.Router();
 
 reminderRouter.get("/", getAllReminders);

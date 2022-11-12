@@ -1,8 +1,8 @@
 
 import { error } from "console";
 import mongoose from "mongoose";
-import blogs from "../models/blogs";
-import user from "../models/user";
+import blogs from "../models/blogs.js";
+import user from "../models/user.js";
 export const getAllBlogs = async (req , res , next) =>{
     const offset = req.params.offset;
     let allBlogs;

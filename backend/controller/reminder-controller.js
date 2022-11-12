@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import reminder from "../models/reminder";
-import user from "../models/user";
+import reminder from "../models/reminder.js";
+import user from "../models/user.js";
 import { LocalStorage } from "node-localstorage";
 import localStorage from "localStorage";
 import nodemailer from "nodemailer";

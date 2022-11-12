@@ -9,7 +9,7 @@ import {
   getQuestionsByid,
   getUserByid,
   codeforcesData
-} from "../controller/user-controller";
+} from "../controller/user-controller.js";
 
 const router = Express.Router();
 
