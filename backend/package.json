@@ -3,13 +3,15 @@
     "agenda": "^4.4.0",
     "cors": "^2.8.5",
     "deep-email-validator": "^0.1.21",
+    "dotenv": "^16.0.3",
     "express": "^4.18.1",
+    "framer-motion": "^4.1.17",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "mongoose": "^6.6.1",
     "node": "^18.9.0",
     "nodemon": "^2.0.19",
-    "framer-motion": "^4.1.17"
+    "axios":"*"
   },
   "name": "discuss",
   "version": "1.0.0",
@@ -17,10 +19,9 @@
   "main": "node.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {}
+  "license": "ISC"
 }
