@@ -21,7 +21,7 @@ const ReminderDetails = () => {
     }));
   };
   const fetchDetails = async () => {
-    const res = await axios(`http://localhost:5000/api/reminders/${id}`).catch(
+    const res = await axios(`https://minigrinders.herokuapp.com/api/reminders/${id}`).catch(
       (err) => console.log(err)
     );
     const data = await res.data;
@@ -50,7 +50,7 @@ const ReminderDetails = () => {
 
   const sendRequest = async () => {
     const res = await axios
-      .put(`http://localhost:5000/api/reminders/update/${id}`, {
+      .put(`https://minigrinders.herokuapp.com/api/reminders/update/${id}`, {
         title: inputs.title,
         difficulty: inputs.difficulty,
         noofques: inputs.noofques,

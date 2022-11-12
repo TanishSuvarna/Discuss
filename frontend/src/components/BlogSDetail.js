@@ -16,7 +16,7 @@ const BlogSDetail = ({setisAddBlog}) => {
   const [editComment , seteditComment] = React.useState();
   const Location = useLocation();
   const [offset,setOffset] = React.useState(0);
-  const{loading , empty , getBlogs,setgetBlogs} = Paginated(`http://localhost:5000/api/blog/allBlogs/oneBlog/${Location.state.id.id}/`,"showBlog",offset);
+  const{loading , empty , getBlogs,setgetBlogs} = Paginated(`https://minigrinders.herokuapp.com/api/blog/allBlogs/oneBlog/${Location.state.id.id}/`,"showBlog",offset);
   const observer = useRef();
   const lastElementRef = useCallback(
     node => {
@@ -46,7 +46,7 @@ const BlogSDetail = ({setisAddBlog}) => {
   const handleSubmit = async (e) =>{
     e.preventDefault();
     const input = {description: commentData , ourUser : localStorage.userId , ourBlog:Location.state.id.id}
-  const res = await axios.post(`http://localhost:5000/api/blog/comments`,input).catch((err) => console.log(err));
+  const res = await axios.post(`https://minigrinders.herokuapp.com/api/blog/comments`,input).catch((err) => console.log(err));
   if(empty){
     setgetBlogs(prevBlog => {
       return {...prevBlog , userComments:[...prevBlog.userComments , res.data.allData]};
@@ -55,7 +55,7 @@ const BlogSDetail = ({setisAddBlog}) => {
   }
   const handleSubmitUpdate = async (e) =>{
     e.preventDefault();
-    const res = await axios.put(`http://localhost:5000/api/blog/comments/${editComment}`,{commentData}).catch((err) => console.log(err));
+    const res = await axios.put(`https://minigrinders.herokuapp.com/api/blog/comments/${editComment}`,{commentData}).catch((err) => console.log(err));
     setgetBlogs((prevBlogs) =>{
       return {...prevBlogs , userComments:[...prevBlogs.userComments.map((blog) =>{ 
         if(blog._id === res.data.newComment._id){
@@ -68,7 +68,7 @@ const BlogSDetail = ({setisAddBlog}) => {
     setCommentData("");
   }
   const sendDelRequest =  async (id) => {
-    await axios.delete(`http://localhost:5000/api/blog/comments/${id}`);
+    await axios.delete(`https://minigrinders.herokuapp.com/api/blog/comments/${id}`);
     setgetBlogs((prevBlogs) =>{
        return {...prevBlogs , userComments:[...prevBlogs.userComments.filter((blog) => blog._id !== id)]}
       });

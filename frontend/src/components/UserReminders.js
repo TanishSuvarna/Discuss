@@ -22,7 +22,7 @@ const UserReminders = ({
 
   const deleteRequest = async () => {
     const res = await axios
-      .delete(`http://localhost:5000/api/reminders/${id}`)
+      .delete(`https://minigrinders.herokuapp.com/api/reminders/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

@@ -98,7 +98,7 @@ const Auth = ({ isSignUp, setisSignUp }) => {
     };
     let res;
     try{
-     res = await axios.post(`http://localhost:5000/api/user/${type}` ,user)
+     res = await axios.post(`https://minigrinders.herokuapp.com/api/user/${type}` ,user)
   }
     catch(err){
       setallInputs({

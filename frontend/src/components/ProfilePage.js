@@ -10,7 +10,7 @@ const ProfilePage = () => {
   const id = localStorage.getItem("userId");
   const sendRequest = async () => {
     const res = await axios
-      .get(`http://localhost:5000/api/user/${id}`)
+      .get(`https://minigrinders.herokuapp.com/api/user/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     console.log(data);

@@ -11,7 +11,7 @@ const BasicCard = React.forwardRef(
     const navigate = useNavigate();
     const sendRequest = async () => {
       await axios
-        .delete(`http://localhost:5000/api/blog/${id}`)
+        .delete(`https://minigrinders.herokuapp.com/api/blog/${id}`)
         .catch((err) => {
           console.log(err);
         });

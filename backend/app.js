@@ -7,7 +7,7 @@ import reminderRouter from "./routes/reminder-routes.js";
 import cors from "cors";
 import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 dotenv.config()
-mongoose.connect("mongodb://127.0.0.1:27017/discuss", {
+mongoose.connect("mongodb+srv://Tanish21:Tanishexp%4091@cluster0.p7pxbmk.mongodb.net/test?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

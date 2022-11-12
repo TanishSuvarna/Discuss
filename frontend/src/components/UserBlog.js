@@ -6,7 +6,7 @@ const UserBlog = ({ setisAddBlog }) => {
   const userId = localStorage.getItem("userId");
   const [offset, setOffset] = useState(0);
   const { loading, empty, getBlogs, setgetBlogs } = Paginated(
-    `http://localhost:5000/api/blog/allBlogs/${userId}/`,
+    `https://minigrinders.herokuapp.com/api/blog/allBlogs/${userId}/`,
     "userBlogs",
     offset
   );

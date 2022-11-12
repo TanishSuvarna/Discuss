@@ -32,7 +32,7 @@ const AddRemider = ({ setisCrossed, reminders, setreminders }) => {
   };
   const sendRequest = async () => {
     const res = await axios
-      .post("http://localhost:5000/api/reminders/add", {
+      .post("https://minigrinders.herokuapp.com/api/reminders/add", {
         title: inputs.title,
         difficulty: inputs.difficulty,
         noofques: inputs.noofques,

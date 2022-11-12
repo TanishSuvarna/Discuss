@@ -41,10 +41,10 @@ const AddBlog = ({ setisAddBlog }) => {
     let res;
     try {
       if (!_id)
-        res = await axios.post(`http://localhost:5000/api/blog/addBlog`, user);
+        res = await axios.post(`https://minigrinders.herokuapp.com/api/blog/addBlog`, user);
       else
         res = await axios.put(
-          `http://localhost:5000/api/blog/updateBlog/${_id}`,
+          `https://minigrinders.herokuapp.com/updateBlog/${_id}`,
           user
         );
     } catch (err) {

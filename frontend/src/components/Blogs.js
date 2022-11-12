@@ -9,7 +9,7 @@ const Blogs = ({ setisAddBlog }) => {
 
   //Custom Hook
   const { loading, empty, getBlogs } = Paginated(
-    "http://localhost:5000/api/blog/",
+    "https://minigrinders.herokuapp.com/api/blog/",
     "allBlogs",
     offset
   );

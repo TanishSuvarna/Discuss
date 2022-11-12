@@ -18,7 +18,7 @@ const Mainsec2 = ({
   let id = localStorage.getItem("userId");
   const fetchDetails = async () => {
     const res = await axios(
-      `http://localhost:5000/api/user/questions/${id}`
+      `https://minigrinders.herokuapp.com/api/user/questions/${id}`
     ).catch((err) => console.log(err));
     const data = await res.data;
 
@@ -73,7 +73,7 @@ const Mainsec2 = ({
       if (leetId !== "null") {
         try {
           await axios
-            .get(`http://localhost:5000/api/user/userData/leetcode/${leetId}`)
+            .get(`https://minigrinders.herokuapp.com/api/user/userData/leetcode/${leetId}`)
             .then((data) => {
               if (data.data.allLeet) {
                 localStorage.setItem("leetcodeId", leetId);
@@ -105,7 +105,7 @@ const Mainsec2 = ({
       if (hackId !== "null") {
         try {
           await axios
-            .get(`http://localhost:5000/api/user/userData/hackerrank/${hackId}`)
+            .get(`https://minigrinders.herokuapp.com/api/user/userData/hackerrank/${hackId}`)
             .then((data) => {
               localStorage.setItem("hackerrankId", hackId);
               localStorage.setItem("hackData", data.data.totalQues);
@@ -133,7 +133,7 @@ const Mainsec2 = ({
       if (codeId !== "null") {
         try {
           await axios
-            .get(`http://localhost:5000/api/user/userData/codeforces/${codeId}`)
+            .get(`https://minigrinders.herokuapp.com/api/user/userData/codeforces/${codeId}`)
             .then((data) => {
               localStorage.setItem("codeforcesId", codeId);
               localStorage.setItem("codeData", JSON.stringify(data.data));
