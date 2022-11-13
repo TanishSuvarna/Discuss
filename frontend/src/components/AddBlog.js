@@ -44,7 +44,7 @@ const AddBlog = ({ setisAddBlog }) => {
         res = await axios.post(`https://minigrinders.herokuapp.com/api/blog/addBlog`, user);
       else
         res = await axios.put(
-          `https://minigrinders.herokuapp.com/updateBlog/${_id}`,
+          `https://minigrinders.herokuapp.com/api/blog/updateBlog/${_id}`,
           user
         );
     } catch (err) {
